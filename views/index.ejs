@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <% include partials/head %>
+    <link rel='stylesheet' href='/stylesheets/aest.css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container-fluid bg-3 text-center">
+
+      <div class="col-sm-4" >
+        <h4>Your Details</h4>
+          <div style="background-color:#f8f8f8;border-radius: 10px; padding: 12px; margin-top:74px;">
+
+            <label for="name">Your Name</label>
+            <div id="name" style="font-size:12pt"></div>
+            <br>
+            <label for="balance">Your Balance</label>
+            <div id="balance" style="font-size:12pt"></div>
+            <br>
+            <label for="address">Your Address</label>
+            <div id="address" style="font-size:9pt"></div>
+          </div>
+      </div>
+
+      <div class="col-sm-4">
+        <h4>Your authored papers</h4>
+        <table style="width:100%" id="submitTable">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Read</th>
+          </tr>
+          </thead>
+          <tbody id="submited">
+          </tbody>
+        </table>
+        <p class="warning" id="swarning"></p>
+      </div>
+
+      <div class="col-sm-4">
+        <h4>Your readable Papers</h4>
+        <table style="width:100%" id="paperTable">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Read</th>
+          </tr>
+          </thead>
+          <tbody id="readables">
+          </tbody>
+        </table>
+        <p class="warning" id="warning"></p>
+      </div>
+
+    </div>
+
+  <div id="pdfShow">
+  </div>
+
+
+
+  </body>
+  <% include partials/script %>
+  <script src="./javascripts/home.js"></script>
+</html>
+
+<!--
+        <button id="button1" onclick="myFunction()" class="fancybutton"> <i class="fas fa-spinner fa-circle-notch"></i></button>
+        <script>
+          function myFunction() {
+            if($("#button1").text() == "Click Me") {
+              Swal.fire({
+                title: 'Error!',
+                text: $("#button1").text(),
+                type: 'error',
+                confirmButtonText: 'Cool'
+              })
+            }
+            else {
+              Swal.fire({
+                title: 'Success!',
+                text: $("#button1").text(),
+                type: 'success',
+                confirmButtonText: 'Cool'
+              })
+            }
+
+          }
+        </script>
+        <button name="hellobutton" id="hellobutton" onclick="javascript:alert("Hello World")">Hello</button>
+        <script type="text/javascript">function click() {
+              console.log('pressed');
+        };
+        </script>
+-->

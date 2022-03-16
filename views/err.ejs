@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <% include partials/head %>
+    <link rel='stylesheet' href='/stylesheets/aest.css' />
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container-fluid bg-3 text-center">
+    <h2 style="font-weight:bold;">Something went wrong</h2>
+    <h1>😣</h1>
+<br>
+    <h3> <%= error %> </h3>
+    <p><%= error_message %></p>
+  <% include partials/script %>
+</html>

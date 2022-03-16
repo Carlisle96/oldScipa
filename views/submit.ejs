@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <% include partials/head %>
+    <link rel='stylesheet' href='/stylesheets/aest.css' />
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container-fluid bg-3">
+        <p>Welcome to <%= page %></p>
+
+        <div>
+          <!-- <form class="" name="submitForm" id="submitForm" action="http://35.242.243.4:5000/submit-file" method="post" enctype="multipart/form-data"> -->
+          <form class="" name="submitForm" id="submitForm" enctype="multipart/form-data" onreset="resetForm()">
+            <label for="inSubTitle">Title</label>
+            <input type="text" name="title" id="inSubTitle" placeholder="Title of Your Paper" autofocus>
+            <label for="inSubAuthor">Author</label>
+            <input type="text" name="author" id="inSubAuthor" placeholder="Names of Authors (e.g. Max Mustermann, Carolin Neumann, ...)">
+            <div style="float: center; width: 100%;">
+
+
+              <div class="upload-btn-wrapper" style="float:center">
+                <label for="inSubFile">Paper</label>
+                <button class="button" id="butSubFile">Upload your paper</button>
+                <input type="file" name="paper"  id="inSubFile"/>
+              </div>
+
+
+
+              <div class="upload-btn-wrapper"  style="float:center">
+                <label for="inSubBibTex">BibTeX</label>
+                <button class="button" id="butSubBibTex">Upload BibTeX</button>
+                <input type="file" name="bibtex" id="inSubBibTex"/>
+              </div>
+            </div>
+
+            <div style="float:right;margin-top: 20px;">
+              <input type="reset" value="Clear" class="button">
+              <input type="submit" value="Submit" class="fancybutton">
+            </div>
+
+          </form>
+        </div>
+    </div>
+    <div class="spinner" id="spinnerDiv" hidden="true" style="">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </body>
+  <% include partials/script %>
+  <script src="/javascripts/submitscript.js"></script>
+</html>

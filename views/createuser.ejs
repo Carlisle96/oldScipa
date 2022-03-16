@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <% include partials/head %>
+    <link rel='stylesheet' href='/stylesheets/aest.css' />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container-fluid bg-3">
+      <div>
+        <form class="userForm" id="userForm" onsubmit="" action="">
+          <label for="user_name">First Name</label>
+          <input type="text" id="user_first_name" name="user_first_name" placeholder="" autofocus>
+          <label for="user_name">Last Name</label>
+          <input type="text" id="user_last_name" name="user_last_name" placeholder="" autofocus>
+          
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password">
+          <div style="float:right;margin-top: 20px;margin-bottom: 20px;">
+            <input type="reset" value="Clear" class="button">
+            <input id="createSubmitButton" type="submit" value="Create" class="fancybutton">
+          </div>
+
+        </form>
+
+      </div>
+      <div class="spinner" id="spinnerDiv" hidden="true" style="">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+  </div>
+  <% include partials/script %>
+  <script src="/javascripts/createUserscript.js"></script>
+<script>
+// $('#userForm')
+//     .ajaxForm({
+//         url : 'http://35.242.243.4:5000/create-user', // or whatever
+//         type: 'post',
+//         dataType : 'json',
+//         success : function (response) {
+//             alert("The server says: " + response);
+//         }
+    // });
+
+    function sub () {
+      $(this).preventDefault();
+      alert("sub")
+    }
+
+
+
+</script>
+</body>

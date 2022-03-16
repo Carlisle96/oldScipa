@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <% include partials/head %>
+    <link rel='stylesheet' href='/stylesheets/aest.css' />
+  </head>
+  <body>
+    <% include partials/menu %>
+    <div class="container-fluid bg-3">
+
+        <div>
+          <form class="inputForm" action="/read/search" method="get" enctype="X-www-form-urlencoded">
+            <label for="inPaperID">Paper ID</label>
+            <input type="text" id="inPaperID" name="inPaperID" placeholder="" autofocus>
+            <label for="inAuthorname">Author</label>
+            <input type="text" id="inAuthorname" name="inAuthorname" placeholder="The author's name">
+            <label for="inTitle">Paper Title</label>
+            <input type="text" id="inTitle" name="inTitle" placeholder="The title of the paper">
+            <div style="float:right;margin-top: 20px;margin-bottom: 20px;">
+              <input type="reset" value="Clear" class="button">
+              <input type="submit" value="Search" class="fancybutton">
+            </div>
+
+          </form>
+        </div>
+        <% if(!empty) { %>
+        <table style="width:100%" id="paperTable">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Read</th>
+            <% if (reviewer) {%>
+              <th>Review</th>
+            <% } %>
+          </tr>
+        </thead>
+
+
+        <tbody>
+
+          <%
+          for (i = 0; i < data.length ; i++)  { %>
+              <%- include( 'partials/readrow', {id: data[i][0],
+              title: data[i][2],
+              authors: data[i][1],
+              reviewer: reviewer}); %>
+          <% } %>
+
+        </tbody>
+        </table>
+        <%} else {%>
+          <div class="container-fluid bg-3 text-center">
+          <h2 style="font-weight:bold;">No papers available</h2>
+          <h1>😣</h1>
+        <%}%>
+
+
+
+
+    </div>
+
+
+  </body>
+  <% include partials/script %>
+  <script src="/javascripts/readscript.js"></script>
+  <%  accessiblePapers = [];
+    // contract.getReadable.call(function(err,accessiblepapers) {
+    //     accessiblePapers = accessiblepapers;
+    //     console.log(accessiblePapers)
+    // });
+%>
+</html>

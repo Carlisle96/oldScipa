@@ -1,0 +1,9 @@
+<tr>
+    <td><%= id %></td>
+    <td><%= title %></td>
+    <td><%= authors %></td>
+    <td><button class="fancybutton" id="button<%= id %>"><i class="fas fa-spinner fa-spin"></i></button></td>
+<% if (reviewer) { %>
+    <td><a href="read/review/<%= id %>"><button class="fancybutton" onclick="">Review</button></a></td>
+    <% }  %>
+</tr>
